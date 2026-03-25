@@ -17,7 +17,7 @@ Hree's sRGB vs. P3:
 Left: an sRGB image
 
 Right: the same image converted to linear RGB, then to XYZ, then to the P3 
-primaries, then the sRGB transfer function is repllied.
+primaries, then the sRGB transfer function is reapplied.
 
 You can see reds have become slightly desaturated, since the P3 space is so
 much larger in that direction.
@@ -27,6 +27,6 @@ Here's sRGB vs XYZ:
 [![srgb-xyz](srgb-xyz.jpg)](srgb-xyz.jpg)
 
 Right: just an identity matrix instead of XYZ->P3, followed by shifting the
-whitepointto D65. 
+whitepoint to D65. 
 
 Now everything is very desaturated, since the XYZ space is enormous.

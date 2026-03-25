@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<root xmlns="http://www.vips.ecs.soton.ac.uk/nip/9.0.17">
-  <Workspace view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" locked="false" local_defs="// local definitions for this tab&#10;" name="tab1" filename="$HOME/pics/calib.ws" major="9" minor="0">
+<root xmlns="http://www.vips.ecs.soton.ac.uk/nip/9.1.0">
+  <Workspace view="WORKSPACE_MODE_REGULAR" scale="1" offset="0" locked="false" local_defs="// local definitions for this tab&#10;" name="tab2" filename="$CWD/calib.ws" major="9" minor="0">
     <Column x="10" y="5" open="true" selected="false" sform="false" next="3" name="A" caption="to linear RGB">
       <Subcolumn vislevel="3">
         <Row popup="false" name="A1">
           <Rhs vislevel="1" flags="1">
             <iImage show_status="false" show_convert="false"/>
             <Subcolumn vislevel="0"/>
-            <iText formula="Image_file &quot;/home/john/pics/theo.jpg&quot;"/>
+            <iText formula="Image_file &quot;$CWD/theo.jpg&quot;"/>
           </Rhs>
         </Row>
         <Row popup="false" name="A2">
@@ -19,7 +19,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="414" y="5" open="true" selected="false" sform="false" next="6" name="B" caption="linear sRGB to XYZ">
+    <Column x="419" y="5" open="true" selected="false" sform="false" next="6" name="B" caption="linear sRGB to XYZ">
       <Subcolumn vislevel="3">
         <Row popup="false" name="B2">
           <Rhs vislevel="1" flags="4">
@@ -49,18 +49,25 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1238" y="5" open="true" selected="false" sform="false" next="2" name="C" caption="apply sRGB gamma">
+    <Column x="1781" y="5" open="true" selected="false" sform="false" next="3" name="C" caption="apply sRGB gamma">
       <Subcolumn vislevel="3">
+        <Row popup="false" name="C2">
+          <Rhs vislevel="2" flags="5">
+            <iImage show_status="false" show_convert="false"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="G1"/>
+          </Rhs>
+        </Row>
         <Row popup="false" name="C1">
           <Rhs vislevel="3" flags="7">
             <iImage show_status="false" show_convert="false"/>
             <Subcolumn vislevel="1"/>
-            <iText formula="Colour_convert_item.sRGB_item.action D4"/>
+            <iText formula="Colour_convert_item.sRGB_item.action  G1"/>
           </Rhs>
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="826" y="5" open="true" selected="false" sform="false" next="7" name="D" caption="XYZ to linear P3">
+    <Column x="866" y="5" open="true" selected="false" sform="false" next="7" name="D" caption="XYZ to linear P3">
       <Subcolumn vislevel="3">
         <Row popup="false" name="D1">
           <Rhs vislevel="1" flags="4">
@@ -127,7 +134,7 @@
         </Row>
       </Subcolumn>
     </Column>
-    <Column x="1238" y="231" open="true" selected="true" sform="false" next="2" name="E" caption="side by side">
+    <Column x="1781" y="353" open="true" selected="true" sform="false" next="2" name="E" caption="side by side">
       <Subcolumn vislevel="3">
         <Row popup="false" name="E1">
           <Rhs vislevel="3" flags="7">
@@ -173,6 +180,83 @@
               </Row>
             </Subcolumn>
             <iText formula="Image_join_item.Left_right_item.action A1 C1"/>
+          </Rhs>
+        </Row>
+      </Subcolumn>
+    </Column>
+    <Column x="1313" y="5" open="true" selected="false" sform="false" next="2" name="G" caption="XYZ equi energy to sRGB">
+      <Subcolumn vislevel="3">
+        <Row popup="false" name="G5">
+          <Rhs vislevel="2" flags="5">
+            <iImage show_status="false" show_convert="false"/>
+            <Subcolumn vislevel="0"/>
+            <iText formula="B5 / 100"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="G6">
+          <Rhs vislevel="3" flags="7">
+            <iImage show_status="false" show_convert="false" scale="1" offset="0" page="0" falsecolour="false" mode="multipage"/>
+            <Subcolumn vislevel="1">
+              <Row name="dest">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="x">
+                <Rhs vislevel="0" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage show_status="false" show_convert="false"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="to">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Tag as" labelsn="12" labels0="Mono" labels1="sRGB" labels2="scRGB" labels3="RGB16" labels4="GREY16" labels5="Lab" labels6="LabQ" labels7="LabS" labels8="LCh" labels9="XYZ" labels10="Yxy" labels11="UCS" value="2"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_tag_item.XYZ_item.action G5"/>
+          </Rhs>
+        </Row>
+        <Row popup="false" name="G1">
+          <Rhs vislevel="3" flags="7">
+            <iImage show_status="false" show_convert="false" scale="1" offset="0" page="0" falsecolour="false" mode="multipage"/>
+            <Subcolumn vislevel="1">
+              <Row name="x">
+                <Rhs vislevel="3" flags="4">
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="super">
+                <Rhs vislevel="0" flags="4">
+                  <iImage show_status="false" show_convert="false"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="old_white">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="Old whitepoint" labelsn="10" labels0="D93" labels1="D75" labels2="D65" labels3="D55" labels4="D50" labels5="A" labels6="B" labels7="C" labels8="E" labels9="D3250" value="2"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+              <Row name="new_white">
+                <Rhs vislevel="1" flags="1">
+                  <Option caption="New whitepoint" labelsn="10" labels0="D93" labels1="D75" labels2="D65" labels3="D55" labels4="D50" labels5="A" labels6="B" labels7="C" labels8="E" labels9="D3250" value="8"/>
+                  <Subcolumn vislevel="0"/>
+                  <iText/>
+                </Rhs>
+              </Row>
+            </Subcolumn>
+            <iText formula="Colour_temperature_item.Whitepoint_item.action G6"/>
           </Rhs>
         </Row>
       </Subcolumn>
